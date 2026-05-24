@@ -23,6 +23,7 @@ LaunchPilot follows a simple five-step flow:
 | `/new <idea>` | Creates a new LaunchPilot task from an idea. | `/new Create a simple landing page for my product.` |
 | `/repo <taskId> <owner/repo>` | Sets the GitHub repository for a task. | `/repo 42 my-org/my-website` |
 | `/run <taskId>` | Starts the coding workflow for a task. | `/run 42` |
+| `/cancel <taskId>` | Cancels a task when you no longer want it to continue. Active Codex or build runs are stopped, the task is marked as cancelled, and the cancellation event appears in `/logs <taskId>`. | `/cancel 42` |
 | `/status <taskId>` | Shows the current task status. | `/status 42` |
 | `/logs <taskId>` | Shows recent workflow logs for a task. | `/logs 42` |
 | `/tasks` | Lists your LaunchPilot tasks. | `/tasks` |
@@ -49,6 +50,13 @@ Run the workflow and check progress:
 ```text
 /run 42
 /status 42
+/logs 42
+```
+
+Optionally cancel the task if you no longer want the active run or build to continue:
+
+```text
+/cancel 42
 /logs 42
 ```
 
