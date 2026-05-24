@@ -1,0 +1,3 @@
+Task #12: Improve the README with a clear overview of LaunchPilot. Explain that it is a Telegram-controlled AI coding workflow that turns ideas into GitHub pull requests, supports approve-and-merge, and can return a live website link from Vercel or GitHub Pages. Add a “How it works” section, a “Example workflow” section, and a short “Requirements” section.
+
+Make the smallest useful change. Do not edit secrets, .env files, SSH keys, or deployment tokens. Do not make unrelated refactors.
