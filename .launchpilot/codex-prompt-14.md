@@ -1,0 +1,3 @@
+Task #14: Improve the README with a beginner-friendly explanation of LaunchPilot. Add sections called “What is LaunchPilot?”, “How it works”, “Example workflow”, and “Deployment links”. The “How it works” section should describe the five-step flow: Telegram idea → Codex build → GitHub PR → Approve and merge → Open website. Include example commands using /new, /repo, /run, /status, and explain that LaunchPilot can show the live website link from Vercel or GitHub Pages after merge.
+
+Make the smallest useful change. Do not edit secrets, .env files, SSH keys, or deployment tokens. Do not make unrelated refactors.
