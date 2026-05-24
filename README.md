@@ -16,28 +16,50 @@ LaunchPilot follows a simple five-step flow:
 4. Approve and merge: review the PR, request changes, or approve and merge it.
 5. Open website: for deployable websites, open the live Vercel or GitHub Pages link after deployment.
 
-## Example workflow
+## Telegram commands
 
-Use `/new` to start a task:
+| Command | What it does | Example |
+| --- | --- | --- |
+| `/new <idea>` | Creates a new LaunchPilot task from an idea. | `/new Create a simple landing page for my product.` |
+| `/repo <taskId> <owner/repo>` | Sets the GitHub repository for a task. | `/repo 42 my-org/my-website` |
+| `/run <taskId>` | Starts the coding workflow for a task. | `/run 42` |
+| `/status <taskId>` | Shows the current task status. | `/status 42` |
+| `/logs <taskId>` | Shows recent workflow logs for a task. | `/logs 42` |
+| `/tasks` | Lists your LaunchPilot tasks. | `/tasks` |
+| `/approve <taskId>` | Approves the task result after review. | `/approve 42` |
+| `/reject <taskId>` | Rejects the task result or requests changes. | `/reject 42` |
+| `/merge <taskId>` | Merges the approved pull request. | `/merge 42` |
+
+## Typical workflow
+
+Create a task from an idea:
 
 ```text
 /new Create a simple landing page for my product.
 ```
 
-Choose or confirm the repository:
+Set the repository:
 
 ```text
-/repo my-org/my-website
+/repo 42 my-org/my-website
 ```
 
-Run the build workflow and check progress:
+Run the workflow and check progress:
 
 ```text
-/run
-/status
+/run 42
+/status 42
+/logs 42
 ```
 
-LaunchPilot creates the code, opens a GitHub pull request, and shares the PR link in Telegram. After review, you approve and merge the PR. If the project is configured for deployment, LaunchPilot returns the live website URL.
+Review the pull request, then approve and merge it:
+
+```text
+/approve 42
+/merge 42
+```
+
+If the project is configured for deployment, LaunchPilot returns the live website URL after the pull request is merged.
 
 ## Deployment links
 
