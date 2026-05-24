@@ -24,7 +24,7 @@
       }
 
       main {
-        width: min(90vw, 640px);
+        width: min(90vw, 760px);
         padding: 48px 24px;
         text-align: center;
       }
@@ -42,12 +42,89 @@
         line-height: 1.6;
         color: #526075;
       }
+
+      .how-it-works {
+        margin-top: 40px;
+        text-align: left;
+      }
+
+      .how-it-works h2 {
+        margin: 0;
+        font-size: 1.5rem;
+        line-height: 1.2;
+        text-align: center;
+      }
+
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin: 24px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .steps li {
+        padding: 20px;
+        border: 1px solid #dce3ee;
+        border-radius: 8px;
+        background: #ffffff;
+      }
+
+      .step-number {
+        display: inline-grid;
+        width: 32px;
+        height: 32px;
+        margin-bottom: 14px;
+        place-items: center;
+        border-radius: 50%;
+        background: #172033;
+        color: #ffffff;
+        font-weight: 700;
+      }
+
+      .steps h3 {
+        margin: 0;
+        font-size: 1rem;
+      }
+
+      .steps p {
+        margin-top: 8px;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      @media (max-width: 640px) {
+        .steps {
+          grid-template-columns: 1fr;
+        }
+      }
     </style>
   </head>
   <body>
     <main>
       <h1>Hello from LaunchPilot</h1>
       <p>Telegram-controlled AI coding agent.</p>
+      <section class="how-it-works" aria-labelledby="how-it-works-title">
+        <h2 id="how-it-works-title">How it works</h2>
+        <ol class="steps">
+          <li>
+            <span class="step-number">1</span>
+            <h3>Telegram idea</h3>
+            <p>Send a product idea, bug, or change request from Telegram.</p>
+          </li>
+          <li>
+            <span class="step-number">2</span>
+            <h3>Codex build</h3>
+            <p>Codex reads the repo, makes the change, and verifies the work.</p>
+          </li>
+          <li>
+            <span class="step-number">3</span>
+            <h3>GitHub PR</h3>
+            <p>LaunchPilot opens a GitHub pull request ready for review.</p>
+          </li>
+        </ol>
+      </section>
     </main>
   </body>
 </html>
