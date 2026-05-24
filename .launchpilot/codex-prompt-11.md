@@ -1,0 +1,3 @@
+Task #11: Update the existing index.html landing page with a polished five-step “How it works” section. The steps should be: “Telegram idea”, “Codex build”, “GitHub PR”, “Approve and merge”, and “Open website”. Add a short one-sentence explanation for each step, keep the design clean and modern, and preserve the existing hero section.
+
+Make the smallest useful change. Do not edit secrets, .env files, SSH keys, or deployment tokens. Do not make unrelated refactors.
