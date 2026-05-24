@@ -1,0 +1,3 @@
+Task #18: Improve the index.html landing page by adding a “Mission Control Workflow” section. Show the LaunchPilot flow as an animated five-step pipeline: Telegram idea, Codex build, GitHub PR, Approve and merge, Open website. Make each step light up in sequence with subtle motion and keep it mobile-friendly.
+
+Make the smallest useful change. Do not edit secrets, .env files, SSH keys, or deployment tokens. Do not make unrelated refactors.
