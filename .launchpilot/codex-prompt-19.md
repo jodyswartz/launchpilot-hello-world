@@ -1,0 +1,3 @@
+Task #19: Improve the index.html landing page with a polished product demo section for LaunchPilot. Add an animated five-step workflow showing Telegram idea → Codex build → GitHub PR → Approve and merge → Open website. Also add a small terminal-style activity feed showing example build logs. Keep the design modern, responsive, and consistent with the existing page.
+
+Make the smallest useful change. Do not edit secrets, .env files, SSH keys, or deployment tokens. Do not make unrelated refactors.
