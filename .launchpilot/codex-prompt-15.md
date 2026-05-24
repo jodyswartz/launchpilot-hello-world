@@ -1,0 +1,3 @@
+Task #15: Improve the README by adding a “Telegram commands” section. Include a markdown table with each LaunchPilot command, what it does, and an example. Cover: /new <idea>, /repo <taskId> <owner/repo>, /run <taskId>, /status <taskId>, /logs <taskId>, /tasks, /approve <taskId>, /reject <taskId>, and /merge <taskId>. Also add a short “Typical workflow” example showing the commands in order from idea to merged deployment.
+
+Make the smallest useful change. Do not edit secrets, .env files, SSH keys, or deployment tokens. Do not make unrelated refactors.
