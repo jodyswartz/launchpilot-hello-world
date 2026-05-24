@@ -73,30 +73,32 @@
         text-align: center;
       }
 
-      .demo-panel {
+      .mission-panel {
         display: grid;
-        gap: 22px;
+        gap: 20px;
         margin-top: 28px;
-        padding: 18px;
+        padding: 20px;
         border: 1px solid #dce3ee;
         border-radius: 8px;
         background:
-          linear-gradient(135deg, rgba(25, 111, 255, 0.08), rgba(31, 191, 148, 0.08)),
+          radial-gradient(circle at top left, rgba(25, 111, 255, 0.12), transparent 32%),
+          linear-gradient(135deg, rgba(25, 111, 255, 0.07), rgba(31, 191, 148, 0.07)),
           #ffffff;
         box-shadow: 0 22px 60px rgba(23, 32, 51, 0.1);
       }
 
-      .steps {
+      .timeline {
         display: grid;
-        gap: 18px;
+        gap: 16px;
         margin: 0;
         padding: 0;
         list-style: none;
       }
 
-      .steps li {
+      .timeline li {
         position: relative;
-        padding: 22px 20px;
+        min-height: 134px;
+        padding: 18px;
         border: 1px solid #dce3ee;
         border-radius: 8px;
         background: #ffffff;
@@ -106,13 +108,12 @@
           light-step 6000ms ease-in-out infinite;
       }
 
-      .steps li:nth-child(1) { animation-delay: 80ms, 0ms; }
-      .steps li:nth-child(2) { animation-delay: 200ms, 1200ms; }
-      .steps li:nth-child(3) { animation-delay: 320ms, 2400ms; }
-      .steps li:nth-child(4) { animation-delay: 440ms, 3600ms; }
-      .steps li:nth-child(5) { animation-delay: 560ms, 4800ms; }
+      .timeline li:nth-child(1) { animation-delay: 80ms, 0ms; }
+      .timeline li:nth-child(2) { animation-delay: 200ms, 1500ms; }
+      .timeline li:nth-child(3) { animation-delay: 320ms, 3000ms; }
+      .timeline li:nth-child(4) { animation-delay: 440ms, 4500ms; }
 
-      .step-icon {
+      .timeline-marker {
         display: inline-grid;
         width: 42px;
         height: 42px;
@@ -127,90 +128,158 @@
         animation: pulse-step 6000ms ease-in-out infinite;
       }
 
-      .steps li:nth-child(1) .step-icon { animation-delay: 0ms; }
-      .steps li:nth-child(2) .step-icon { animation-delay: 1200ms; }
-      .steps li:nth-child(3) .step-icon { animation-delay: 2400ms; }
-      .steps li:nth-child(4) .step-icon { animation-delay: 3600ms; }
-      .steps li:nth-child(5) .step-icon { animation-delay: 4800ms; }
+      .timeline li:nth-child(1) .timeline-marker { animation-delay: 0ms; }
+      .timeline li:nth-child(2) .timeline-marker { animation-delay: 1500ms; }
+      .timeline li:nth-child(3) .timeline-marker { animation-delay: 3000ms; }
+      .timeline li:nth-child(4) .timeline-marker { animation-delay: 4500ms; }
 
-      .steps h3 {
+      .timeline h3 {
         margin: 0;
         font-size: 1rem;
       }
 
-      .steps p {
+      .timeline p {
         margin-top: 8px;
         font-size: 0.95rem;
         line-height: 1.5;
       }
 
-      .activity-feed {
+      .control-grid {
+        display: grid;
+        gap: 18px;
+      }
+
+      .agent-transcript {
         overflow: hidden;
         width: 100%;
-        max-width: 640px;
-        margin: 0 auto;
-        border: 1px solid #263145;
+        border: 1px solid #cfd8e7;
         border-radius: 8px;
-        background: #111827;
-        color: #d7e0ee;
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        background: #f7fbff;
+        box-shadow: 0 16px 40px rgba(23, 32, 51, 0.08);
       }
 
-      .terminal-bar {
+      .transcript-bar {
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 13px 16px;
+        border-bottom: 1px solid #dce3ee;
+        background: #ffffff;
+      }
+
+      .agent-name {
+        color: #172033;
+        font-size: 0.84rem;
+        font-weight: 800;
+      }
+
+      .agent-status {
+        display: inline-flex;
+        align-items: center;
         gap: 7px;
-        padding: 12px 14px;
-        border-bottom: 1px solid #263145;
-        background: #172033;
-      }
-
-      .terminal-dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: #ff6b6b;
-      }
-
-      .terminal-dot:nth-child(2) {
-        background: #ffd166;
-      }
-
-      .terminal-dot:nth-child(3) {
-        background: #1fbf94;
-      }
-
-      .terminal-title {
-        margin-left: 6px;
-        color: #9fb0c7;
-        font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+        color: #1f8c71;
         font-size: 0.78rem;
+        font-weight: 800;
+        text-transform: uppercase;
       }
 
-      .log-lines {
+      .agent-status::before {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #1fbf94;
+        box-shadow: 0 0 0 6px rgba(31, 191, 148, 0.14);
+        content: "";
+      }
+
+      .messages {
+        display: grid;
+        gap: 10px;
         margin: 0;
         padding: 16px;
-        font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-        font-size: 0.84rem;
-        line-height: 1.75;
-        white-space: pre-wrap;
+        list-style: none;
       }
 
-      .log-lines span {
-        display: block;
+      .message {
+        width: fit-content;
+        max-width: min(86%, 440px);
+        padding: 11px 13px;
+        border-radius: 8px;
+        color: #172033;
+        background: #ffffff;
+        box-shadow: 0 8px 24px rgba(23, 32, 51, 0.08);
         opacity: 0;
         transform: translateY(8px);
-        animation: show-log 5200ms ease infinite;
+        animation: show-message 6200ms ease infinite;
       }
 
-      .log-lines span:nth-child(1) { animation-delay: 0ms; }
-      .log-lines span:nth-child(2) { animation-delay: 650ms; }
-      .log-lines span:nth-child(3) { animation-delay: 1300ms; }
-      .log-lines span:nth-child(4) { animation-delay: 1950ms; }
-      .log-lines span:nth-child(5) { animation-delay: 2600ms; }
+      .message.user {
+        justify-self: end;
+        background: #196fff;
+        color: #ffffff;
+      }
 
-      .log-success {
-        color: #7ee2bd;
+      .message:nth-child(1) { animation-delay: 0ms; }
+      .message:nth-child(2) { animation-delay: 700ms; }
+      .message:nth-child(3) { animation-delay: 1400ms; }
+      .message:nth-child(4) { animation-delay: 2100ms; }
+
+      .message strong {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 0.72rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .dashboard {
+        display: grid;
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .status-card {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        gap: 12px;
+        min-height: 74px;
+        padding: 14px;
+        border: 1px solid #dce3ee;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 12px 28px rgba(23, 32, 51, 0.07);
+      }
+
+      .status-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #1fbf94;
+        box-shadow: 0 0 0 6px rgba(31, 191, 148, 0.14);
+      }
+
+      .status-card:first-child .status-dot {
+        background: #196fff;
+        box-shadow: 0 0 0 6px rgba(25, 111, 255, 0.14);
+        animation: running-dot 1200ms ease-in-out infinite;
+      }
+
+      .status-label {
+        margin: 0;
+        color: #172033;
+        font-size: 0.9rem;
+        font-weight: 800;
+      }
+
+      .status-meta {
+        margin: 3px 0 0;
+        color: #657286;
+        font-size: 0.8rem;
+        line-height: 1.35;
       }
 
       @keyframes fade-step {
@@ -251,7 +320,7 @@
         }
       }
 
-      @keyframes show-log {
+      @keyframes show-message {
         0%, 8% {
           opacity: 0;
           transform: translateY(8px);
@@ -268,28 +337,43 @@
         }
       }
 
-      @media (min-width: 860px) {
-        .steps {
-          grid-template-columns: repeat(5, 1fr);
+      @keyframes running-dot {
+        0%, 100% {
+          transform: scale(1);
         }
 
-        .steps li:not(:last-child)::after {
+        50% {
+          transform: scale(1.25);
+        }
+      }
+
+      @media (min-width: 860px) {
+        .timeline {
+          grid-template-columns: repeat(4, 1fr);
+        }
+
+        .timeline li:not(:last-child)::after {
           position: absolute;
           top: 42px;
           left: calc(100% + 1px);
-          width: 18px;
+          width: 16px;
           height: 2px;
           background: linear-gradient(90deg, #9aa8ba, rgba(154, 168, 186, 0));
           content: "";
         }
+
+        .control-grid {
+          grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.8fr);
+          align-items: stretch;
+        }
       }
 
       @media (max-width: 859px) {
-        .steps {
+        .timeline {
           grid-template-columns: 1fr;
         }
 
-        .steps li:not(:last-child)::after {
+        .timeline li:not(:last-child)::after {
           position: absolute;
           top: calc(100% + 1px);
           left: 41px;
@@ -301,9 +385,10 @@
       }
 
       @media (prefers-reduced-motion: reduce) {
-        .steps li,
-        .step-icon,
-        .log-lines span {
+        .timeline li,
+        .timeline-marker,
+        .message,
+        .status-card:first-child .status-dot {
           animation: none;
           opacity: 1;
           transform: none;
@@ -316,46 +401,76 @@
       <h1>Hello from LaunchPilot</h1>
       <p>Telegram-controlled AI coding agent.</p>
       <section class="how-it-works" aria-labelledby="mission-control-title">
-        <span class="section-kicker">Product demo</span>
-        <h2 id="mission-control-title">Mission Control Workflow</h2>
-        <p class="section-intro">Watch an idea move from Telegram to a reviewed pull request and deployed website.</p>
-        <div class="demo-panel">
-          <ol class="steps">
+        <span class="section-kicker">LaunchPilot Mission Control</span>
+        <h2 id="mission-control-title">From Telegram command to live release</h2>
+        <p class="section-intro">A calm control room for shipping Codex work through review, merge, and deployment.</p>
+        <div class="mission-panel">
+          <ol class="timeline" aria-label="LaunchPilot workflow timeline">
             <li>
-              <span class="step-icon" aria-hidden="true">TG</span>
-              <h3>Telegram idea</h3>
-              <p>Send a product idea, bug, or change request straight from Telegram.</p>
+              <span class="timeline-marker" aria-hidden="true">01</span>
+              <h3>Task received</h3>
+              <p>Telegram captures the request and pins it to the target repository.</p>
             </li>
             <li>
-              <span class="step-icon" aria-hidden="true">&lt;/&gt;</span>
-              <h3>Codex build</h3>
-              <p>Codex reads the repo, makes the change, and verifies the work.</p>
+              <span class="timeline-marker" aria-hidden="true">02</span>
+              <h3>Codex running</h3>
+              <p>The agent reads context, edits the page, and checks the result.</p>
             </li>
             <li>
-              <span class="step-icon" aria-hidden="true">PR</span>
-              <h3>GitHub PR</h3>
-              <p>LaunchPilot opens a GitHub pull request ready for review.</p>
+              <span class="timeline-marker" aria-hidden="true">03</span>
+              <h3>Review ready</h3>
+              <p>LaunchPilot opens the pull request with a focused summary.</p>
             </li>
             <li>
-              <span class="step-icon" aria-hidden="true">OK</span>
-              <h3>Approve and merge</h3>
-              <p>Review the diff, approve it, and merge when the update looks right.</p>
-            </li>
-            <li>
-              <span class="step-icon" aria-hidden="true">GO</span>
-              <h3>Open website</h3>
-              <p>Visit the updated site and see the merged change live.</p>
+              <span class="timeline-marker" aria-hidden="true">04</span>
+              <h3>Live website</h3>
+              <p>Approved changes merge and the deployed site link returns to chat.</p>
             </li>
           </ol>
-          <aside class="activity-feed" aria-label="Example build activity">
-            <div class="terminal-bar" aria-hidden="true">
-              <span class="terminal-dot"></span>
-              <span class="terminal-dot"></span>
-              <span class="terminal-dot"></span>
-              <span class="terminal-title">launchpilot build</span>
-            </div>
-            <pre class="log-lines"><span>$ /run 42</span><span>[ok] repo scanned: launchpilot/site</span><span>[ok] codex updated index.html</span><span>[ok] checks passed and PR #19 opened</span><span class="log-success">[ok] merged: website deploy ready</span></pre>
-          </aside>
+          <div class="control-grid">
+            <aside class="agent-transcript" aria-label="Telegram-style LaunchPilot agent transcript">
+              <div class="transcript-bar">
+                <span class="agent-name">LaunchPilot Agent</span>
+                <span class="agent-status">Online</span>
+              </div>
+              <ol class="messages">
+                <li class="message user"><strong>You</strong>/run 42</li>
+                <li class="message"><strong>LaunchPilot</strong>Codex is updating the landing page now.</li>
+                <li class="message"><strong>LaunchPilot</strong>Pull request is ready for review.</li>
+                <li class="message user"><strong>You</strong>/approve 42 and merge</li>
+              </ol>
+            </aside>
+            <ul class="dashboard" aria-label="Mission status dashboard">
+              <li class="status-card">
+                <span class="status-dot" aria-hidden="true"></span>
+                <div>
+                  <p class="status-label">Codex running</p>
+                  <p class="status-meta">Repository scan active</p>
+                </div>
+              </li>
+              <li class="status-card">
+                <span class="status-dot" aria-hidden="true"></span>
+                <div>
+                  <p class="status-label">PR ready</p>
+                  <p class="status-meta">Diff prepared</p>
+                </div>
+              </li>
+              <li class="status-card">
+                <span class="status-dot" aria-hidden="true"></span>
+                <div>
+                  <p class="status-label">Merge approved</p>
+                  <p class="status-meta">Review accepted</p>
+                </div>
+              </li>
+              <li class="status-card">
+                <span class="status-dot" aria-hidden="true"></span>
+                <div>
+                  <p class="status-label">Website live</p>
+                  <p class="status-meta">Deployment available</p>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
     </main>
