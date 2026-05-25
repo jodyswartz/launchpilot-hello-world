@@ -1,0 +1,9 @@
+# LaunchPilot Task #21
+
+Repo: jodyswartz/launchpilot-hello-world
+Base branch: main
+Branch: launchpilot/task-21-1779691762212
+
+## Idea
+
+Improve the existing index.html landing page by adding a polished footer section. The footer should include the LaunchPilot name, a short one-line description, and simple links or placeholders for GitHub, Telegram, and Website. Keep the style clean, modern, and responsive, and match the rest of the page.
