@@ -113,6 +113,23 @@
       .timeline li:nth-child(3) { animation-delay: 320ms, 3000ms; }
       .timeline li:nth-child(4) { animation-delay: 440ms, 4500ms; }
 
+      .timeline li:not(:last-child)::before {
+        position: absolute;
+        z-index: 1;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #1fbf94;
+        box-shadow: 0 0 0 5px rgba(31, 191, 148, 0.14);
+        opacity: 0;
+        content: "";
+        animation: progress-pulse 6000ms ease-in-out infinite;
+      }
+
+      .timeline li:nth-child(1)::before { animation-delay: 450ms; }
+      .timeline li:nth-child(2)::before { animation-delay: 1950ms; }
+      .timeline li:nth-child(3)::before { animation-delay: 3450ms; }
+
       .timeline-marker {
         display: inline-grid;
         width: 42px;
@@ -334,6 +351,22 @@
         }
       }
 
+      @keyframes progress-pulse {
+        0%, 12%, 100% {
+          opacity: 0;
+          transform: translate(0, 0) scale(0.72);
+        }
+
+        5% {
+          opacity: 0.85;
+        }
+
+        11% {
+          opacity: 0;
+          transform: translate(var(--pulse-x, 14px), var(--pulse-y, 0)) scale(1);
+        }
+      }
+
       @keyframes show-message {
         0%, 8% {
           opacity: 0;
@@ -376,6 +409,13 @@
           content: "";
         }
 
+        .timeline li:not(:last-child)::before {
+          top: 39px;
+          left: calc(100% + 1px);
+          --pulse-x: 14px;
+          --pulse-y: 0;
+        }
+
         .control-grid {
           grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.8fr);
           align-items: stretch;
@@ -397,6 +437,13 @@
           content: "";
         }
 
+        .timeline li:not(:last-child)::before {
+          top: calc(100% + 1px);
+          left: 38px;
+          --pulse-x: 0;
+          --pulse-y: 16px;
+        }
+
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -407,6 +454,10 @@
           animation: none;
           opacity: 1;
           transform: none;
+        }
+
+        .timeline li::before {
+          display: none;
         }
       }
     </style>
