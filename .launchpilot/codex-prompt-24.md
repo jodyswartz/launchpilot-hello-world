@@ -1,0 +1,3 @@
+Task #24: Add a polished “Repos and websites” section to the existing index.html landing page. Explain that LaunchPilot works with manually connected GitHub repos, creates pull requests for review, and after merge can return the live website link from Vercel or GitHub Pages. Use concise copy, clean cards or bullets, and keep the design consistent with the rest of the page.
+
+Make the smallest useful change. Do not edit secrets, .env files, SSH keys, or deployment tokens. Do not make unrelated refactors.
