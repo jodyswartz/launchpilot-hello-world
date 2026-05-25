@@ -2,19 +2,20 @@
 
 ## What is LaunchPilot?
 
-LaunchPilot is a Telegram-controlled AI coding workflow that turns ideas into GitHub pull requests. You describe what you want in Telegram, LaunchPilot runs the coding workflow, opens a PR, and lets you review the result from GitHub.
+LaunchPilot is a Telegram-controlled AI coding workflow that turns ideas into GitHub pull requests in your connected GitHub repos. You describe what you want in Telegram, LaunchPilot runs the coding workflow, opens a PR, and lets you review the result from GitHub.
 
-It supports approve-and-merge flows, so accepted changes can move from proposal to merged code with minimal manual steps. For website projects, LaunchPilot can also return a live website link from Vercel or GitHub Pages after deployment.
+It supports approve-and-merge flows, task cancellation, and logs, so you can track or stop work without leaving Telegram. For website projects, LaunchPilot can also return a live website link from Vercel or GitHub Pages after deployment.
 
 ## How it works
 
-LaunchPilot follows a simple five-step flow:
+LaunchPilot follows a simple six-step flow:
 
 1. Telegram idea: send a task or feature idea to LaunchPilot from Telegram.
-2. Codex build: Codex updates the repository and prepares the change.
-3. GitHub PR: LaunchPilot opens a GitHub pull request for review.
-4. Approve and merge: review the PR, request changes, or approve and merge it.
-5. Open website: for deployable websites, open the live Vercel or GitHub Pages link after deployment.
+2. Connected repo: choose the GitHub repository where the change should land.
+3. Codex build: Codex updates the repository while `/status` and `/logs` show progress.
+4. GitHub PR: LaunchPilot opens a pull request for review.
+5. Approve and merge: review the PR, cancel if needed, or approve and merge it.
+6. Open website: for deployable websites, open the live Vercel or GitHub Pages link after deployment.
 
 ## Telegram commands
 
