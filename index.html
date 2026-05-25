@@ -525,32 +525,32 @@
   <body>
     <main>
       <h1>Hello from LaunchPilot</h1>
-      <p>Telegram-controlled AI coding agent.</p>
+      <p>Telegram-controlled AI coding for connected GitHub repos, pull requests, merges, and live website links.</p>
       <section class="how-it-works" aria-labelledby="mission-control-title">
         <span class="section-kicker">LaunchPilot Mission Control</span>
         <h2 id="mission-control-title">From Telegram command to live release</h2>
-        <p class="section-intro">A calm control room for shipping Codex work through review, merge, and deployment.</p>
+        <p class="section-intro">Start from Telegram, follow logs, review the pull request, then approve and merge when it is ready.</p>
         <div class="mission-panel">
           <ol class="timeline" aria-label="LaunchPilot workflow timeline">
             <li>
               <span class="timeline-marker" aria-hidden="true">01</span>
-              <h3>Task received</h3>
-              <p>Telegram captures the request and pins it to the target repository.</p>
+              <h3>Repo connected</h3>
+              <p>Choose the GitHub repo where LaunchPilot should make the change.</p>
             </li>
             <li>
               <span class="timeline-marker" aria-hidden="true">02</span>
               <h3>Codex running</h3>
-              <p>The agent reads context, edits the page, and checks the result.</p>
+              <p>The agent reads context, edits the code, and streams progress to logs.</p>
             </li>
             <li>
               <span class="timeline-marker" aria-hidden="true">03</span>
               <h3>Review ready</h3>
-              <p>LaunchPilot opens the pull request with a focused summary.</p>
+              <p>LaunchPilot opens a pull request so you can inspect the diff.</p>
             </li>
             <li>
               <span class="timeline-marker" aria-hidden="true">04</span>
               <h3>Live website</h3>
-              <p>Approved changes merge and the deployed site link returns to chat.</p>
+              <p>Approve and merge, then open the Vercel or GitHub Pages link.</p>
             </li>
           </ol>
           <div class="control-grid">
@@ -561,9 +561,9 @@
               </div>
               <ol class="messages">
                 <li class="message user"><strong>You</strong>/run 42</li>
-                <li class="message"><strong>LaunchPilot</strong>Codex is updating the landing page now.</li>
-                <li class="message"><strong>LaunchPilot</strong>Pull request is ready for review.</li>
-                <li class="message user"><strong>You</strong>/approve 42 and merge</li>
+                <li class="message"><strong>LaunchPilot</strong>Logs show Codex is updating the connected repo.</li>
+                <li class="message"><strong>LaunchPilot</strong>Pull request is ready. You can approve, merge, or cancel.</li>
+                <li class="message user"><strong>You</strong>/approve 42 then /merge 42</li>
               </ol>
             </aside>
             <ul class="dashboard" aria-label="Mission status dashboard">
@@ -571,7 +571,7 @@
                 <span class="status-dot" aria-hidden="true"></span>
                 <div>
                   <p class="status-label">Codex running</p>
-                  <p class="status-meta">Repository scan active</p>
+                  <p class="status-meta">Logs available</p>
                 </div>
               </li>
               <li class="status-card">
@@ -584,8 +584,8 @@
               <li class="status-card">
                 <span class="status-dot" aria-hidden="true"></span>
                 <div>
-                  <p class="status-label">Merge approved</p>
-                  <p class="status-meta">Review accepted</p>
+                  <p class="status-label">Approve or cancel</p>
+                  <p class="status-meta">You control the run</p>
                 </div>
               </li>
               <li class="status-card">
@@ -602,7 +602,7 @@
       <section class="repo-section" aria-labelledby="repos-websites-title">
         <span class="section-kicker">Repos and websites</span>
         <h2 id="repos-websites-title">Connect a repo, review the PR, open the live site</h2>
-        <p class="section-intro">LaunchPilot works with GitHub repositories you manually connect, keeping every code change visible before it ships.</p>
+        <p class="section-intro">LaunchPilot works with GitHub repositories you connect, keeping every code change visible before it ships.</p>
         <ul class="repo-grid">
           <li class="repo-card">
             <span class="repo-icon" aria-hidden="true">
@@ -639,7 +639,7 @@
               </svg>
             </span>
             <h3>Live website</h3>
-            <p>After merge, LaunchPilot can open the deployed website from Vercel or GitHub Pages.</p>
+            <p>After merge, LaunchPilot can return the deployed website link from Vercel or GitHub Pages.</p>
           </li>
         </ul>
       </section>

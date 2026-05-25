@@ -1,0 +1,3 @@
+Task #26: Update the repo documentation and landing page to reflect the latest LaunchPilot workflow. Mention connected GitHub repos, pull requests, approve and merge, cancel support, logs, and live website links from Vercel or GitHub Pages. Keep the changes clear, concise, and beginner-friendly.
+
+Make the smallest useful change. Do not edit secrets, .env files, SSH keys, or deployment tokens. Do not make unrelated refactors.
