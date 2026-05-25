@@ -320,11 +320,28 @@
       }
 
       .repo-card {
+        display: grid;
+        gap: 10px;
         padding: 18px;
         border: 1px solid #dce3ee;
         border-radius: 8px;
         background: #ffffff;
         box-shadow: 0 14px 34px rgba(23, 32, 51, 0.07);
+      }
+
+      .repo-icon {
+        display: inline-grid;
+        width: 42px;
+        height: 42px;
+        place-items: center;
+        border-radius: 8px;
+        background: #eef5ff;
+        color: #196fff;
+      }
+
+      .repo-icon svg {
+        width: 22px;
+        height: 22px;
       }
 
       .repo-card h3 {
@@ -588,16 +605,41 @@
         <p class="section-intro">LaunchPilot works with GitHub repositories you manually connect, keeping every code change visible before it ships.</p>
         <ul class="repo-grid">
           <li class="repo-card">
-            <h3>Manual repo connection</h3>
-            <p>Point each task at the GitHub repository you want LaunchPilot to update.</p>
+            <span class="repo-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 7h10v10H7z"></path>
+                <path d="M7 12H3"></path>
+                <path d="M21 12h-4"></path>
+                <path d="M12 7V3"></path>
+                <path d="M12 21v-4"></path>
+              </svg>
+            </span>
+            <h3>Connected repo</h3>
+            <p>LaunchPilot works with connected GitHub repos so each task lands in the right codebase.</p>
           </li>
           <li class="repo-card">
-            <h3>Pull requests for review</h3>
-            <p>LaunchPilot packages Codex changes into a PR so you can inspect, request changes, approve, and merge.</p>
+            <span class="repo-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="6" cy="18" r="3"></circle>
+                <circle cx="18" cy="6" r="3"></circle>
+                <path d="M6 15V6"></path>
+                <path d="M9 6h6"></path>
+              </svg>
+            </span>
+            <h3>Pull request workflow</h3>
+            <p>LaunchPilot creates pull requests for review so you can inspect changes before merging.</p>
           </li>
           <li class="repo-card">
-            <h3>Live link after merge</h3>
-            <p>For deployed websites, LaunchPilot can return the Vercel or GitHub Pages URL once the merge is live.</p>
+            <span class="repo-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M3 12h18"></path>
+                <path d="M12 3a14 14 0 0 1 0 18"></path>
+                <path d="M12 3a14 14 0 0 0 0 18"></path>
+              </svg>
+            </span>
+            <h3>Live website</h3>
+            <p>After merge, LaunchPilot can open the deployed website from Vercel or GitHub Pages.</p>
           </li>
         </ul>
       </section>
