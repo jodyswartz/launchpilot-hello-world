@@ -1,0 +1,3 @@
+Task #25: Add a new “Repos and websites” section to the existing index.html landing page using three clean feature cards with icons: 1) Connected repo, 2) Pull request workflow, 3) Live website. Each card should have a simple icon, a short title, and a one-sentence explanation. Explain that LaunchPilot works with connected GitHub repos, creates PRs for review, and after merge can open the deployed website from Vercel or GitHub Pages. Keep it polished, minimal, and responsive.
+
+Make the smallest useful change. Do not edit secrets, .env files, SSH keys, or deployment tokens. Do not make unrelated refactors.
